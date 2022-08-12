@@ -8,9 +8,12 @@
 
     $mainPosition = __DIR__;
 
-    require_once("{$mainPosition}\bootstrap\Env.php");
+    // use Bootstrap\Env; melhor do que ->require_once("{$mainPosition}\bootstrap\Env.php"); 
     require_once("{$mainPosition}\helper\helper.php");
+    require_once("{$mainPosition}\\vendor\autoload.php");
 
+    use bootstrap\Env;
+    
     Env::execute();
     dd(env("DB_HOST"));
 
