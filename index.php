@@ -13,8 +13,11 @@
     require_once("{$mainPosition}\\vendor\autoload.php");
 
     use bootstrap\Env;
+    use App\frameworkTools\ProcessServerElements;
+
     
     Env::execute();
-    dd(env("DB_HOST"));
+    $processServerElements = ProcessServerElements::start();
+    dd($processServerElements);
 
     

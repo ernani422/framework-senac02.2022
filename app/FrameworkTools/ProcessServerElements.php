@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\frameworkTools;
+    namespace App\FrameworkTools;
 
         class ProcessServerElements{
 
@@ -10,10 +10,9 @@
                 // SINGLETON
             }
             
-        public  static  function start(){ // design patter
-            if(!ProcessServerElements::$instance){
-                ProcessServerElements::$instance = new
-                ProcessServerElements();
+        public static function start() { // design patter
+            if(!ProcessServerElements::$instance) {
+                ProcessServerElements::$instance = new ProcessServerElements();
             }
 
             return ProcessServerElements::$instance;

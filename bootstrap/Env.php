@@ -1,5 +1,7 @@
 <?php
 
+namespace bootstrap; //* criacao de diretorios*//
+
 class Env {
 
     public static function execute(){
