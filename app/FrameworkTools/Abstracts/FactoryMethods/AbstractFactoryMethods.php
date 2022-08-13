@@ -1,5 +1,5 @@
 <?php
-    namespace App\FrameworkTools\Abstract\FactoryMethods;
+    namespace App\FrameworkTools\Abstracts\FactoryMethods;
 
     use App\FrameworkTools\ProcessServerElements;
 

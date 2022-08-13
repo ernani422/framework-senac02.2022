@@ -14,10 +14,13 @@
 
     use bootstrap\Env;
     use App\frameworkTools\ProcessServerElements;
+    use App\FrameworkTools\Implementations\FactoryMethods\FactoryProcessServerElement;
 
     
     Env::execute();
-    $processServerElements = ProcessServerElements::start();
-    dd($processServerElements);
 
+    $FactoryProcessServerElement = new FactoryProcessServerElement();
+    $FactoryProcessServerElement->operation();
+
+    ?>
     
