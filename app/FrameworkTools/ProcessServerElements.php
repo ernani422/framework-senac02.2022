@@ -7,7 +7,11 @@
             private static $instance;
 
             private $documentRoot;
-            PRIVATE $serverName;
+            private $serverName;
+            private $httpHost;
+            private $uri;
+            private $variables;
+
 
             private function __construct(){
                 // SINGLETON
@@ -35,6 +39,18 @@
 
         public function getServerName () {
             return $this->serverName;
+        }
+        public function setHttpHost ($httpHost) {
+            $this->$httpHost = $httpHost;
+        }
+        public function getHttpHost () {
+            return $this->$httpHost;
+        }
+        public function setUri ($uri) {
+            $this->Uri = $Uri;
+        }
+        public function getUri () {
+            return $this->$Uri; 
         }
 
 
