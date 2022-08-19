@@ -19,8 +19,8 @@
     
     Env::execute();
 
-    $FactoryProcessServerElement = new FactoryProcessServerElement();
-    $FactoryProcessServerElement->operation();
+    $factoryProcessServerElement = new FactoryProcessServerElement();
+    $factoryProcessServerElement->operation();
 
     ?>
     

@@ -15,8 +15,14 @@
 
             $arrayWithVars = explode("&", $stringWithVars);
 
-            $varsOfUrl = array_map(function($element){
-            return explode("=",$element);
+            return array_map(function($element) {
+                $nameAndValue = explode("=",$element);
+
+                return [
+                    "name"=>$nameAndValue[0],
+                  "value"=>$nameAndValue[1]
+                ];
+
             },$arrayWithVars
         );
             DD($varsOfUrl);

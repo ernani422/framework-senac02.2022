@@ -11,6 +11,7 @@
             private $httpHost;
             private $uri;
             private $variables;
+            private $verb;
 
 
             private function __construct(){
@@ -41,18 +42,29 @@
             return $this->serverName;
         }
         public function setHttpHost ($httpHost) {
-            $this->$httpHost = $httpHost;
+            $this->httpHost = $httpHost;
         }
         public function getHttpHost () {
-            return $this->$httpHost;
+            return $this->httpHost;
         }
         public function setUri ($uri) {
-            $this->Uri = $Uri;
+            $this->uri = $uri;
         }
         public function getUri () {
-            return $this->$Uri; 
+            return $this->uri; 
         }
-
+        public function setVariables ($variables) {
+            $this->variables = $variables;
+        }
+        public function getVariables () {
+            return $this-> variables; 
+        }
+        public function setVerb ($verb) {
+            $this->verb = $verb;
+        }
+        public function getVerb () {
+            return $this->verb; 
+        }
 
     }
 
