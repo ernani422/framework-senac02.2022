@@ -24,6 +24,7 @@
            $this->processServerElements-> setUri($_SERVER ["REQUEST_URI"]);
 
            $variables = $this->breakStringInVars($_SERVER ["REQUEST_URI"]);
+           
            $this->processServerElements->setVariables($variables);
            $this->processServerElements->setVerb($_SERVER["REQUEST_METHOD"]);
             dd($this->processServerElements);
