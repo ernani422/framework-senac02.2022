@@ -15,12 +15,15 @@
     use bootstrap\Env;
     use App\frameworkTools\ProcessServerElements;
     use App\FrameworkTools\Implementations\FactoryMethods\FactoryProcessServerElement;
+    use App\FrameworkTools\Implementations\Route\RouteProcess;
 
     
     Env::execute();
 
     $factoryProcessServerElement = new FactoryProcessServerElement();
     $factoryProcessServerElement->operation();
+
+    RouteProcess::execute();
 
     ?>
     

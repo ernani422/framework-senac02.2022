@@ -12,6 +12,7 @@
             private $uri;
             private $variables;
             private $verb;
+            private $Route;
 
 
             private function __construct(){
@@ -64,6 +65,12 @@
         }
         public function getVerb () {
             return $this->verb; 
+        }
+        public function setRoute ($Route) {
+            $this->Route = $Route;
+        }
+        public function getRoute () {
+            return $this->Route; 
         }
 
     }
