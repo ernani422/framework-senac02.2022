@@ -12,15 +12,21 @@ class RouteProcess{
        // dd($processServerElements);
       switch($processServerElements->getVerb()){
         case 'GET':
+            switch($processServerElements->getRoute()){
 
-        switch($processServerElements->getRoute()){
+                case'/hello-world':
+                    return (new HelloWorldController)->execute();
+                    break;
+            }
+            break;
+        case 'POST':
+            switch($processServerElements->getRoute()){
 
-            case'/hello-world':
-                return (new HelloWorldController)->execute();
-                break;
-
-
-        }
-    }
+                case'/hell-world':
+                    return (new HellWorldController)->execute();
+                    break;
+            }
+            break;
+      }
     }
 }

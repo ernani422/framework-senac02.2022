@@ -18,10 +18,10 @@
         }
 
         public function operation (){
-           $this->processServerElements-> setdocumentRoot($_SERVER ["DOCUMENT_ROOT"]);
-           $this->processServerElements-> setserverName($_SERVER ["SERVER_NAME"]);
-           $this->processServerElements-> setHttpHost($_SERVER ["HTTP_HOST"]);
-           $this->processServerElements-> setUri($_SERVER ["REQUEST_URI"]);
+           $this->processServerElements->setdocumentRoot($_SERVER ["DOCUMENT_ROOT"]);
+           $this->processServerElements->setserverName($_SERVER ["SERVER_NAME"]);
+           $this->processServerElements->setHttpHost($_SERVER ["HTTP_HOST"]);
+           $this->processServerElements->setUri($_SERVER ["REQUEST_URI"]);
 
            $variables = $this->breakStringInVars($_SERVER ["REQUEST_URI"]);
            
