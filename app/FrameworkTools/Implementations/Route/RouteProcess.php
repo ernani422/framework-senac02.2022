@@ -19,14 +19,15 @@ class RouteProcess{
                     break;
             }
             break;
-        case 'POST':
-            switch($processServerElements->getRoute()){
 
-                case'/hell-world':
-                    return (new HellWorldController)->execute();
-                    break;
-            }
-            break;
-      }
+                case 'POST':
+                    switch($processServerElements->getRoute()){
+
+                        case'/train-World':
+                             return (new trainWorldController)->execute();
+                             break;
+                     }
+                        break;
+        }
     }
 }
