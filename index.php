@@ -1,31 +1,22 @@
 <?php
-    
-    /*function dd($input){
-        var_dump($input);
-        die();
-    }*/
-    
 
-    $mainPosition = __DIR__;
+$mainPosition = __DIR__;
 
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Headers: *");
 
-    // use Bootstrap\Env; melhor do que ->require_once("{$mainPosition}\bootstrap\Env.php"); 
-    require_once("{$mainPosition}\helper\helper.php");
-    require_once("{$mainPosition}\\vendor\autoload.php");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 
-    use bootstrap\Env;
-    use App\FrameworkTools\Implementations\FactoryMethods\FactoryProcessServerElement;
-    use App\FrameworkTools\Implementations\Route\RouteProcess;
+require_once("{$mainPosition}\helper\helper.php");
+require_once("{$mainPosition}\\vendor\autoload.php");
 
-    
-    Env::execute();
+use Bootstrap\Env;
+use App\FrameworkTools\ProcessServerElements;
+use App\FrameworkTools\Implementations\FactoryMethods\FactoryProcessServerElement;
+use App\FrameworkTools\Implementations\Route\RouteProcess;
 
-    $factoryProcessServerElement = new FactoryProcessServerElement();
-    $factoryProcessServerElement->operation();
+Env::execute();
 
-    RouteProcess::execute();
+$factoryProcessServerElement = new FactoryProcessServerElement();
+$factoryProcessServerElement->operation();
 
-    ?>
-    
+RouteProcess::execute();

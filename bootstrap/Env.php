@@ -1,18 +1,18 @@
 <?php
 
-namespace bootstrap; //* criacao de diretorios*//
+namespace Bootstrap;
 
 class Env {
 
-    public static function execute(){
-        $contentOfEnvFile = file_get_contents(__DIR__ ."\..\.env");
+    public static function execute() {
+        $contentOfEnvFile = file_get_contents(__DIR__ . "\..\.env");
         $arrayEnv = explode("\n",$contentOfEnvFile);
 
-        foreach ($arrayEnv as $value){
+        foreach ($arrayEnv as $value) {
             $keyAndValue = explode("=", $value);
 
-            if(!isset($keyAndValue[1])){ /* !isset = negacao */
-                continue; 
+            if (!isset($keyAndValue[1])) {
+                continue;
             }
 
             $nameOfVariable = $keyAndValue[0];

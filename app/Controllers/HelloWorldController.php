@@ -1,27 +1,29 @@
 <?php
-    
-    namespace App\Controllers;
 
-    use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
+namespace App\Controllers;
 
-    class HelloWorldController extends AbstractControllers {
+use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
 
-        public function execute(){
-            $requestsVariables = $this -> processServerElements -> getVariables();
-            $valueOfVariable;
+class HelloWorldController extends AbstractControllers{
 
-            foreach($requestsVariables as $value){
-                if($value["name"] == "info"){
-                    $valueOfVariable = $value["value"];                
-                }
-            }
+    public function execute() {
+        $requestVariables = $this->processServerElements->getVariables();
+        $nameOfVariable;
         
-            view([
-                "name" => "Api to Learning",
-                "version" => 1.0,
-                "value_of_variable_info" => $valueOfVariable,
-                "manager_developer" => "ernani",
-                "web_site_company" => "https://jms.com"
-            ]);
+        foreach($requestVariables as $value) {
+            if($value["name"] == "info"){
+                $valueOfVariable = $value["value"];
+            }
         }
+
+        view([
+            "name" => "Api to Learning",
+            "version" => 1.0,
+            "value_of_variable_info" => $valueOfVariable,
+            "mananger_developer" => "Ernani da paz",
+            "web_site_company" => "https://ernani422.com"
+        ]);
+
     }
+
+}
