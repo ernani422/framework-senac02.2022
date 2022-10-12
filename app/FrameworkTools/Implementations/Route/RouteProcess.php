@@ -3,77 +3,33 @@
 namespace App\FrameworkTools\Implementations\Route;
 
 use App\FrameworkTools\ProcessServerElements;
-use App\Controllers\CarsController;
-use App\Controllers\InsertDataController;
 
+
+use App\FrameworkTools\Implementations\Route\Get;
+use App\FrameworkTools\Implementations\Route\Post;
 
 class RouteProcess {
 
+    use Get;
+    use Post;
+
+    private static $processServerElements;
+
     public static function execute() {
-        $processServerElements = ProcessServerElements::start();
+        self::$processServerElements = ProcessServerElements::start();
         $routeArray = [];
-    
-        switch($processServerElements->getVerb()) {
+
+        switch (self::$processServerElements->getVerb()) {
             case 'GET':
-
-                switch ($processServerElements->getRoute()) {
-
-                    case '/car':
-                        return (new CarsController)->getCar();
-                    break;
-                case '/car/id-by-car':
-                    return (new CarsController)->getidCar(); 
-                    break;
-
-                case '/car/name-by-car':
-                    return (new CarsController)->getNameCar();
-                    break;
-
-                case '/seller':
-                    return (new CarsController)->getSeller();
-                    break;
-
-                case '/seller/id-by-seller':
-                    return (new CarsController)->getSellerId();
-                    break;
-
-                case '/seller/name-by-seller':
-                    return (new CarsController)->getSellerName(); /**/ 
-                    break;
-/*
-                case '/seller/get-all-car-by-seller':
-                    return (new CarsController)->getSellByName();
-                    break;
-*/
-                case '/Buyer':
-                    return (new CarsController)->getBuyer();
-                    break;
-
-                case '/buyer/id-by-buyer':
-                    return (new CarsController)->getBuyersById();
-                    break;
-                
-                case '/buyer/name-by-buyer':
-                    return (new CarsController)->getNameBuyer();
-                    break;
-                    
-                case '/buyer/get-all-cars':
-                    return (new CarsController)->getCarsByBuyerName();
-                    break;
-
-            
-            }
+                return self::get();
             case 'POST':
-            
-                switch ($processServerElements->getRoute()) {
-                    case '/insert-data':
-                        return (new InsertDataController)->exec();
-                    break;
-                }
-                
+                return self::post();
+
         }
-        
 
     }
+
+
+
 
 }
