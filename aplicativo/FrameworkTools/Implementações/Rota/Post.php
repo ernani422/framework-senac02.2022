@@ -3,6 +3,7 @@
 namespace App\FrameworkTools\Implementations\Route;
 
 use App\Controllers\InsertDataController;
+use App\Controllers\InsertCarController;
 
 trait Post {
     
