@@ -4,6 +4,7 @@ namespace App\FrameworkTools\Implementations\Route;
 
 use App\Controllers\InsertCarController;
 use App\Controllers\InsertDataController;
+use App\Controllers\InsertCarController;
 
 trait Post {
     
@@ -14,7 +15,10 @@ trait Post {
                 return (new InsertCarController)->exec();
             break;
             case '/insert-data':
-                return (new InsertDataController)->exec();
+                return (new InsertDataController)->exec();  
+            break;
+                case '//carinsert':
+                return (new InsertCarController)->exec();
             break;
 
 
