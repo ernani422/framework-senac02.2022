@@ -17,14 +17,13 @@ class InsertCarController extends AbstractControllers{
     
             $this->verificationInputVar();
     
-            $query = "INSERT INTO car (namecar,modelo,ano) VALUES (:name,:modelo,:ano)";
+            $query = "INSERT INTO car (carName,model) VALUES (:carName,:model)";
             
-            $statement = $this->pdo->prepare($query);     
+            $statement = $this->pdo->prepare($query);
 
             $statement->execute([
-                ':namecar' => $this->params["namecar"],
-                ':modelo' => $this->params["modelo"],
-                ':ano' => $this->params["ano"]
+                ':carName' => $this->params["nomeCarro"],
+                ':model' => $this->params["modelo"]
             ]);
 
         } catch (\Exception $e) {
@@ -40,21 +39,15 @@ class InsertCarController extends AbstractControllers{
 
 
     private function verificationInputVar() {
-        if (!$this->params['namecar']) {
-            $this->attrName = 'namecar';
+        if (!$this->params['nomeCarro']) {
+            $this->attrName = 'carName';
             throw new \Exception('the name has to be send in the request');
         }   
 
         if (!$this->params['modelo']) {
-            $this->attrName = 'modelo';
-            throw new \Exception('the modelo has to be send in the request');
+            $this->attrName = 'model';
+            throw new \Exception('the last_name has to be send in the request');
         }
-
-        if (!$this->params['ano']) {
-            $this->attrName = 'ano';
-            throw new \Exception('the ano has to be send in the request');
-        }
-
     }
 
 }
