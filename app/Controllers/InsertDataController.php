@@ -22,7 +22,7 @@ class InsertDataController extends AbstractControllers{
             $statement = $this->pdo->prepare($query);     
             $statement->execute([
                 ':name' => $this->params["name"],
-                ':last_name' => $this->params["last_name"],
+                ':last_name' => $this->params["lastname"],
                 ':age' => $this->params["age"]
             ]);
 
@@ -44,7 +44,7 @@ class InsertDataController extends AbstractControllers{
             throw new \Exception('the name has to be send in the request');
         }   
 
-        if (!$this->params['last_name']) {
+        if (!$this->params['lastname']) {
             $this->attrName = 'last_name';
             throw new \Exception('the last_name has to be send in the request');
         }

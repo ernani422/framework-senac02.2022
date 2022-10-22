@@ -6,7 +6,7 @@ class Env {
 
     public static function execute() {
         $contentOfEnvFile = file_get_contents(__DIR__ . "\..\.env");
-        $arrayEnv = explode("\n",$contentOfEnvFile);
+        $arrayEnv = explode("\n\n",$contentOfEnvFile);
 
         foreach ($arrayEnv as $value) {
             $keyAndValue = explode("=", $value);
