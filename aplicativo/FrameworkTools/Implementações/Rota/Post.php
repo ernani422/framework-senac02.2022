@@ -17,7 +17,7 @@ trait Post {
             case '/insert-data':
                 return (new InsertDataController)->exec();  
             break;
-                case '//carinsert':
+                case '/carro-insert':
                 return (new InsertCarController)->exec();
             break;
 
