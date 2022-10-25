@@ -20,7 +20,7 @@ class HelloWorldController extends AbstractControllers{
             "name" => "Api to Learning",
             "version" => 1.0,
             "value_of_variable_info" => $valueOfVariable,
-            "mananger_developer" => "Jonathan Morris Samara",
+            "mananger_developer" => "ernani da paz",
             "web_site_company" => "https://jms.com"
         ]);
     }
