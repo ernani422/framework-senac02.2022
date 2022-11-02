@@ -19,7 +19,7 @@ class DatabaseConnection {
         $port = env('DB_PORT');
         
 
-        $this->pdo = new PDO(
+        $this->pdo = new PDO( /* mas este pdo e proprio do php*/
             "mysql:host=localhost;dbname=trabalho1quartobi;port=3306;", 
             "root", 
             ""
