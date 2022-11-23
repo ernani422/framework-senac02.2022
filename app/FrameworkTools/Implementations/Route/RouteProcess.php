@@ -3,8 +3,10 @@
 namespace App\FrameworkTools\Implementations\Route;
 
 use App\FrameworkTools\ProcessServerElements;
-
-
+use App\FrameworkTools\Implementations\Route\Get;
+use App\FrameworkTools\Implementations\Route\Post;
+use App\FrameworkTools\Implementations\Route\Put;
+use App\FrameworkTools\Implementations\Route\Delete;
 
 
 class RouteProcess {
@@ -12,6 +14,7 @@ class RouteProcess {
     use Get;
     use Post;
     use Put;
+    use Delete;
 
     private static $processServerElements;
 
@@ -26,6 +29,8 @@ class RouteProcess {
                 return self::post();
             case 'PUT':
                 return self::put();
+            case 'DELETE':
+                return self::delete();
 
         }
 
