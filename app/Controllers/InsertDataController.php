@@ -21,7 +21,7 @@ class InsertDataController extends AbstractControllers{
             
             $statement = $this->pdo->prepare($query);     
             $statement->execute([
-                ':name' => $this->params["name"],
+                ':name' => $this->params["nameL"],
                 ':last_name' => $this->params["lastname"],
                 ':age' => $this->params["age"]
             ]);
@@ -54,15 +54,6 @@ class InsertDataController extends AbstractControllers{
             throw new \Exception('the age has to be send in the request');
         }
 
-        if ($this->params['age'] < 0) {
-            $this->attrName = 'age';
-            throw new \Exception('the age has to be more than zero');
-        }
-
-        if ($this->params['age'] > 200) {
-            $this->attrName = 'age';
-            throw new \Exception('the age has to be less than two hundred');
-        }        
     }
 
 }
