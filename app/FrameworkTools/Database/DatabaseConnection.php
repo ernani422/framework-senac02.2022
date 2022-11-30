@@ -19,18 +19,9 @@ class DatabaseConnection {
         $port = env('DB_PORT');
         
 
-<<<<<<< Updated upstream
-        $this->pdo = new PDO( /* mas este pdo e proprio do php*/
-=======
+       
         $this->pdo = new PDO(
-            "mysql:host=localhost;dbname=frameworksenac;port=3306;",
-            "root", 
-            ""
-        );
-
-        $this->pdo = new PDO(
->>>>>>> Stashed changes
-            "mysql:host=localhost;dbname=frameworksenac;port=3306;", 
+            "mysql:host=localhost;dbname=trabalho1quartobi;port=3306;",
             "root", 
             ""
         );
