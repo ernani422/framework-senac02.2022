@@ -1,6 +1,7 @@
 <?php
 
 namespace App\FrameworkTools\Implementations\Route;
+
 use App\Controllers\HelloWorldController;
 use App\Controllers\TrainQueryController;
 use App\Controllers\ErnanidapazController;
@@ -19,14 +20,14 @@ trait Get {
             case '/train-query':
                 return (new TrainQueryController)->execute();
             break;
-
                 case '/paz1':
                 return (new ErnanidapazController)->paz1();
             break;
 
             case '/carro-select':
-                return (new InsertCarController)->execute();
+                return (new InsertCarControlle)->execute();
             break;
+
 
         }
     }
