@@ -20,11 +20,11 @@ class DatabaseConnection {
         
 
         $this->pdo = new PDO( /* mas este pdo e proprio do php*/
-            "mysql:host=localhost;dbname=car;port=3306;", 
+            "mysql:host=localhost;dbname=trabalho1quartobi;port=3306;", 
             "root", 
             ""
         );
-        dd($response);
+
     }
 
     public static function start() {

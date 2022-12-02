@@ -1,34 +1,25 @@
 <?php
 
-namespace App\Controllers;
+namespace App\FrameworkTools\Implementations\Route;
 
-use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
+use App\Controllers\ErnanidapazController;
+use App\Controllers\DeleteController;
+trait Delete {
+    
+    private static function Delete() {
+        switch (self::$processServerElements->getRoute()) {
+                    
+            case '/delete_user':
+               return (new DeleteController)->exec();
+            break;
 
-class DeleteController extends AbstractControllers {
-
-    public function exec() {
-        $requestsVariables = $this->processServerElements->getVariables();
-
-        $idUser;
-    try{
-        foreach ($requestsVariables as $valueVariable) {
-            if ($valueVariable['name']  === 'id_user') {
-                $idUser = $valueVariable['value'];
-            }
+            case '/paz4':
+                return (new ErnanidapazController)->paz4();
+             break;
         }
-
-        $stmd = $this->pdo->prepare("DELETE FROM USER WHERE id_user= :id_user");
-        $stmd ->execute(['id_user'=> $idUser]);
-
-    } catch (\Exception $e) {
-        $response = [
-            'sucess'=> false,
-            'message'=> $e->getMessage()
-        ];    
-     }
     }
 
-    }
+}
 
 /*Quanto mais voltas você dá para chegar ao destino final, menos resultado terá.
 https://www.dinamize.com.br/blog/conversao/

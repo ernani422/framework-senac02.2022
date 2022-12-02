@@ -1,7 +1,6 @@
 <?php
 
 namespace App\FrameworkTools\Implementations\Route;
-
 use App\Controllers\HelloWorldController;
 use App\Controllers\TrainQueryController;
 use App\Controllers\ErnanidapazController;

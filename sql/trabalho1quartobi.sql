@@ -9,3 +9,7 @@ CREATE TABLE petshop (
         type_service ENUM('banho','tosa')
 );
 
+INSERT INTO petshop (name_pet,type_service) VALUES
+('pastorbelga', 'tosa'),
+('buterrier','banho'),
+('Pinther','banho');

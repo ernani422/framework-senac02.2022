@@ -8,7 +8,7 @@ class HelloWorldController extends AbstractControllers{
 
     public function execute() {
         $requestsVariables = $this->processServerElements->getVariables();
-        $valueOfVariable;
+        $valueOfVariable = "";
         
         foreach ($requestsVariables as $value) {
             if($value["name"] == "info") {

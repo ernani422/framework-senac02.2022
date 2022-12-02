@@ -9,8 +9,8 @@ use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
 class UpdateDataController extends AbstractControllers {
 
     public function exec() {
-        $userId; /* declarando e null*/
-        $missingAttribute; 
+        $userId = null;/* declarando e null*/
+        $missingAttribute = "";
         $response = [
             'success' => true 
 
@@ -69,7 +69,8 @@ class UpdateDataController extends AbstractControllers {
             if (!$userId) {
                 /* se nao exitrir se ele encontrar o userid ele estoura e exception*/
 
-                $missingAttr90-ception("You need to inform userId variable");
+                $missingAttribute("You need to inform userId variable");
+                
             }
 
             $users = $this->pdo->query("SELECT * FROM user WHERE id_user = '{$userId}';")

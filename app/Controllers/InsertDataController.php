@@ -17,7 +17,7 @@ class InsertDataController extends AbstractControllers{
     
             $this->verificationInputVar();
     
-            $query = "INSERT INTO user (name,last_name,age) VALUES (:name,:last_name,:age)";
+            $query = "INSERT INTO frameworksenac (name,last_name,age) VALUES (:name,:last_name,:age)";
             
             $statement = $this->pdo->prepare($query);     
             $statement->execute([

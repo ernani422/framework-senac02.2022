@@ -9,7 +9,7 @@ use App\FrameworkTools\Implementations\Route\Put;
 use App\FrameworkTools\Implementations\Route\Delete;
 
 
-class RouteProcess {
+class Route {
 
     use Get;
     use Post;
@@ -18,8 +18,8 @@ class RouteProcess {
 
     private static $processServerElements;
 
-    public static function execute() {
-        self::$processServerElements = ProcessServerElements::start();
+    public static function RouteProcess() {
+        self::$$processServerElements = ProcessServerElements::start();
         $routeArray = [];
 
         switch (self::$processServerElements->getVerb()) {
@@ -35,8 +35,5 @@ class RouteProcess {
         }
 
     }
-
-
-
 
 }
