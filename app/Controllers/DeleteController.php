@@ -1,26 +1,58 @@
 <?php
 
-namespace App\FrameworkTools\Implementations\Route;
+namespace App\Controllers;
 
-use App\Controllers\ErnanidapazController;
-use App\Controllers\DeleteController;
-trait Delete {
+use App\FrameworkTools\Abstracts\Controllers\AbstractControllers;
+
+class DeleteController extends AbstractControllers {
+
+    public function exec() {
+        $requestsVariables = $this->processServerElements->getVariables();
+        $response = ['success' => true];
+
+        $missingAttribute;
+        $idUser;
     
-    private static function Delete() {
-        switch (self::$processServerElements->getRoute()) {
-                    
-            case '/delete_user':
-               return (new DeleteController)->exec();
-            break;
+        try {
+            
+            foreach ($requestsVariables as $valueVariable) {
+                if ($valueVariable["name"] === "id_user") {
+                    $idUser = $valueVariable["value"];
+                }
+            }
+            
+            if (!$idUser) {
+                $missingAttribute = 'userIdIsNull';
+                throw new \Exception("You need to inform idUser variable");
+            }
 
-            case '/paz4':
-                return (new ErnanidapazController)->paz4();
-             break;
+            $users = $this
+                        ->pdo
+                        ->query("SELECT * FROM user WHERE id_user = '{$idUser}';")
+                        ->fetchAll();
+
+            if (sizeof($users) === 0) {
+                $missingAttribute = 'thisUserNoExist';
+                throw new \Exception("There is not record of this user in db");
+            }
+        
+            $sql = "DELETE FROM user WHERE id_user= :id_user";
+            
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute(['id_user' => $idUser]);
+
+        } catch (\Exception $e) {
+            $response = [
+                'success' => false,
+                'message' => $e->getMessage(),
+                'missingAttribute' => $missingAttribute
+            ];
         }
+        
+        view($response);
     }
 
 }
-
 /*Quanto mais voltas você dá para chegar ao destino final, menos resultado terá.
 https://www.dinamize.com.br/blog/conversao/
 https://institutopharos.com.br/2012/08/27/aprendizagem-organizacional-e-gestao-do-conhecimento/ (tacito e explicito)
